@@ -18,7 +18,7 @@ public interface BackendAdapter {
     @Recover
     public String getBackendResponseFallback(RuntimeException e);
 
-    @Retryable(value = {RemoteServiceNotAvailableException.class}, maxAttempts = 3, backoff = @Backoff(delay = 1000))
+    @Retryable(value = {RuntimeException.class}, maxAttempts = 3, backoff = @Backoff(delay = 1000))
     public String getBackend(boolean simulateretry, boolean simulateretryfallback);
 
     @Recover

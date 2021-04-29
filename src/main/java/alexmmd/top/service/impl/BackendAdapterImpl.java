@@ -47,18 +47,18 @@ public class BackendAdapterImpl implements BackendAdapter {
             System.out.println("Simulateretry is true, so try to simulate exception scenario.");
 
             if (simulateretryfallback) {
-                throw new RemoteServiceNotAvailableException(
+                throw new RuntimeException(
                         "Don't worry!! Just Simulated for Spring-retry..Must fallback as all retry will get exception!!!");
             }
             int random = new Random().nextInt(4);
 
             System.out.println("Random Number : " + random);
             if (random % 2 == 0) {
-                throw new RemoteServiceNotAvailableException("Don't worry!! Just Simulated for Spring-retry..");
+                throw new RuntimeException("Don't worry!! Just Simulated for Spring-retry..");
             }
         }
 
-        return "Hello from Remote Backend!!!";
+        return "你好 from Remote Backend!!!";
     }
 
     @Override
