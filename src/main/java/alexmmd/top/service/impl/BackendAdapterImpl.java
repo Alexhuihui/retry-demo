@@ -58,7 +58,7 @@ public class BackendAdapterImpl implements BackendAdapter {
             }
         }
 
-        return "你好 from Remote Backend!!!";
+        return "你好 Alex from Remote Backend!!!";
     }
 
     @Override
